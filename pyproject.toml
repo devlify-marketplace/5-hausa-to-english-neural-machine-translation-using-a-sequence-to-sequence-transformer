@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hausa-to-english-nmt"
+version = "1.0.0"
+description = "Reproducible Hausa-to-English neural machine translation coursework project"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = {text = "MIT"}
+authors = [{name = "Topic 5 Final-Year Project"}]
+dependencies = [
+  "torch>=2.1,<3",
+  "transformers>=4.46,<5",
+  "accelerate>=0.26,<2",
+  "sentencepiece>=0.1.99",
+  "sacremoses>=0.1.1",
+  "pandas>=2.0,<4",
+  "numpy>=1.24,<3",
+  "pyarrow>=14",
+  "sacrebleu>=2.4,<3",
+  "fastapi>=0.110,<1",
+  "uvicorn[standard]>=0.27,<1",
+  "pydantic>=2.6,<3",
+  "matplotlib>=3.7,<4"
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9", "httpx>=0.27,<1"]
+
+[project.scripts]
+hausa-nmt-train = "hausa_nmt.train:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"

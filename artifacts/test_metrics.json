@@ -1,0 +1,46 @@
+{
+  "project": "Topic 5 - Hausa-to-English NMT",
+  "evaluation_protocol": "same deterministic held-out test sample for base and fine-tuned models; grouped by unique Hausa source string before sampling",
+  "selection_metric": "validation loss (lower is better)",
+  "base_model": "Helsinki-NLP/opus-mt-ha-en",
+  "dataset": "michsethowusu/english-hausa_sentence-pairs_mt560",
+  "seed": 42,
+  "run_sample_counts": {
+    "train": 3000,
+    "validation": 256,
+    "test": 256
+  },
+  "base_model_metrics": {
+    "examples": 256,
+    "sacrebleu": 37.4445,
+    "chrf_plus_plus": 54.5478,
+    "ter": 52.2801,
+    "exact_match_rate": 0.039062,
+    "metric_text_normalization": "English MosesDetokenizer applied consistently to hypotheses and references before scoring",
+    "sacrebleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0",
+    "chrf_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.6.0",
+    "ter_signature": "nrefs:1|case:lc|tok:tercom|norm:no|punct:yes|asian:no|version:2.6.0",
+    "elapsed_seconds": 79.82
+  },
+  "fine_tuned_model_metrics": {
+    "examples": 256,
+    "sacrebleu": 38.3172,
+    "chrf_plus_plus": 54.717,
+    "ter": 51.6519,
+    "exact_match_rate": 0.050781,
+    "metric_text_normalization": "English MosesDetokenizer applied consistently to hypotheses and references before scoring",
+    "sacrebleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0",
+    "chrf_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.6.0",
+    "ter_signature": "nrefs:1|case:lc|tok:tercom|norm:no|punct:yes|asian:no|version:2.6.0",
+    "elapsed_seconds": 81.34
+  },
+  "metric_deltas_finetuned_minus_base": {
+    "sacrebleu": 0.8727,
+    "chrf_plus_plus": 0.1692,
+    "ter": -0.6282,
+    "exact_match_rate": 0.0117
+  },
+  "note": "This is a held-out split of the selected MT560 corpus. The upstream OPUS-MT checkpoint is itself trained on OPUS resources; corpus overlap in pretraining cannot be ruled out, and results do not represent an independent benchmark or every Hausa domain.",
+  "timestamp_utc": "2026-10-10T13:35:55.477348+00:00",
+  "metric_note": "The English MosesDetokenizer was applied consistently to hypotheses and references before corpus SacreBLEU, chrF++ and TER."
+}

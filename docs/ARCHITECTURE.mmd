@@ -1,0 +1,16 @@
+flowchart LR
+    A[MT560 English-Hausa parallel corpus] --> B[Normalize whitespace and remove exact duplicate pairs]
+    B --> C[Group split by Hausa source string]
+    C --> D[Train partition]
+    C --> E[Validation partition]
+    C --> F[Held-out test partition]
+    G[Helsinki OPUS-MT ha-en Marian Transformer] --> H[Base-model evaluation]
+    G --> I[Fine-tune with train partition]
+    E --> I
+    I --> J[Select checkpoint by validation loss]
+    F --> K[Base vs fine-tuned comparison]
+    H --> K
+    J --> K
+    J --> L[Saved local model]
+    L --> M[FastAPI inference]
+    M --> N[Browser demo / REST API]

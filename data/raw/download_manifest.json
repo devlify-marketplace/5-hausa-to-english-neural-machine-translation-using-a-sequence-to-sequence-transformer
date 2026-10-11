@@ -1,0 +1,13 @@
+{
+  "dataset_id": "michsethowusu/english-hausa_sentence-pairs_mt560",
+  "upstream": "https://opus.nlpl.eu/MT560",
+  "dataset_card": "https://huggingface.co/datasets/michsethowusu/english-hausa_sentence-pairs_mt560",
+  "file_url": "https://huggingface.co/datasets/michsethowusu/english-hausa_sentence-pairs_mt560/resolve/main/data/train-00000-of-00001.parquet?download=true",
+  "license_reported_by_mirror": "CC BY 4.0",
+  "retrieved_utc": "2026-10-10T13:20:24.735268+00:00",
+  "file": "data/raw/mt560_english_hausa.parquet",
+  "size_bytes": 38270100,
+  "sha256": "21a36d1be6d18a725a148842067b25dd472e2f7677e5a054d9aa5a98bcf717bb",
+  "download_seconds": 1.03,
+  "remote_dataset_code_executed": false
+}

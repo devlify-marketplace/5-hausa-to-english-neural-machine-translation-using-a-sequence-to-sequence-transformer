@@ -1,0 +1,77 @@
+{
+  "model_name": "Topic 5 Hausa-to-English fine-tuned Marian Transformer",
+  "model_path": "artifacts/model",
+  "base_model": "Helsinki-NLP/opus-mt-ha-en",
+  "architecture": "MarianMTModel (Transformer encoder-decoder)",
+  "source_language": "Hausa (hau)",
+  "target_language": "English (eng)",
+  "training_config": {
+    "project_title": "Hausa-to-English Neural Machine Translation Using a Sequence-to-Sequence Transformer",
+    "dataset_id": "michsethowusu/english-hausa_sentence-pairs_mt560",
+    "dataset_file_url": "https://huggingface.co/datasets/michsethowusu/english-hausa_sentence-pairs_mt560/resolve/main/data/train-00000-of-00001.parquet?download=true",
+    "raw_data_path": "data/raw/mt560_english_hausa.parquet",
+    "processed_data_dir": "data/processed",
+    "base_model": "Helsinki-NLP/opus-mt-ha-en",
+    "model_license": "Apache-2.0",
+    "seed": 42,
+    "train_fraction": 0.8,
+    "validation_fraction": 0.1,
+    "max_train_samples": 3000,
+    "max_eval_samples": 256,
+    "max_source_length": 128,
+    "max_target_length": 128,
+    "max_new_tokens": 128,
+    "num_beams": 4,
+    "train_batch_size": 8,
+    "eval_batch_size": 8,
+    "inference_batch_size": 8,
+    "epochs": 1,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01
+  },
+  "selected_global_step": 375,
+  "best_validation_metrics": {
+    "epoch": 1.0,
+    "step": 375.0,
+    "eval_loss": 1.244570255279541,
+    "eval_runtime": 8.5258,
+    "eval_samples_per_second": 30.026,
+    "eval_steps_per_second": 3.753
+  },
+  "corpus_manifest": {
+    "source_file": "data/raw/mt560_english_hausa.parquet",
+    "source_sha256": "21a36d1be6d18a725a148842067b25dd472e2f7677e5a054d9aa5a98bcf717bb",
+    "direction": "Hausa (hau) -> English (eng)",
+    "seed": 42,
+    "split_method": "random assignment of unique Hausa source strings; repeated source sentences remain in one split",
+    "fractions_requested": {
+      "train": 0.8,
+      "validation": 0.1,
+      "test": 0.09999999999999995
+    },
+    "usable_unique_pair_count": 295811,
+    "counts": {
+      "train": 237325,
+      "validation": 29400,
+      "test": 29086
+    },
+    "unique_source_counts": {
+      "train": 173537,
+      "validation": 21644,
+      "test": 21682
+    }
+  },
+  "run_sample_counts": {
+    "train": 3000,
+    "validation": 256,
+    "test": 256
+  },
+  "device": "cpu",
+  "torch_version": "2.7.1+cu126",
+  "transformers_version": "4.57.6",
+  "test_metrics_file": "artifacts/test_metrics.json",
+  "test_set_used_for_training_or_selection": false,
+  "selected_training_checkpoint_name": "checkpoint-375",
+  "selected_model_artifact": "artifacts/model",
+  "test_metric_text_normalization": "English MosesDetokenizer applied consistently to hypotheses and references before scoring"
+}
